@@ -1,4 +1,4 @@
-# Lumen 开发RESful api
+# Lumen 开发RESTful api
 
 
 
