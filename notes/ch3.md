@@ -47,5 +47,6 @@ DB::table('songs')->insert(['title' => 'Fall', 'created_at'=> new DateTime, 'upd
 ### 参考资料
 
 * [Laravel migration](http://laravel-china.org/docs/5.0/migrations)
+* [Laravel 结构生成器](http://laravel-china.org/docs/5.0/schema)
   
   ​
