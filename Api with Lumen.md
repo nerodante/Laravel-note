@@ -1,4 +1,4 @@
-# Lumen 开发RESful api
+# Lumen 开发RESTful api
 
 
 
@@ -85,4 +85,7 @@ $app->withEloquent();
 ## 参考资料
 
 * [Lumen 中间件](http://lumen.laravel-china.org/docs/middleware)
+<<<<<<< HEAD
 * [Dingo api](https://github.com/dingo/api/wiki)
+=======
+>>>>>>> fcb3333a6cfbdf450a30b986f52202aa30c3144f
