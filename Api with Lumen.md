@@ -48,6 +48,41 @@ $app->routeMiddleware([
 
 
 
+#  dingo api
+
+- 安装
+
+
+- 使用JWT
+
+### 1.安装dingo api
+
+- composer 安装，然后执行 _composer update_
+
+``` José
+// composer.json增加
+"dingo/api": "1.0.*@dev",
+```
+
+- 在 _bootstrap/app.php_ 增加
+
+``` php
+$app->register(Dingo\Api\Provider\LumenServiceProvider::class);
+```
+
+由于Lumen 关闭了很多功能，有些地方还需要做些额外的修改。
+
+- 把Eloquent 打开
+
+``` php
+$app->withEloquent();
+```
+
+
+
+
+
 ## 参考资料
 
 * [Lumen 中间件](http://lumen.laravel-china.org/docs/middleware)
+* [Dingo api](https://github.com/dingo/api/wiki)
