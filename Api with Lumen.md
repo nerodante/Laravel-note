@@ -78,7 +78,45 @@ $app->register(Dingo\Api\Provider\LumenServiceProvider::class);
 $app->withEloquent();
 ```
 
+### 2. 配置
 
+* 版本
+
+dingo api 会提供api的版本控制功能，只需在路由中配置。如：
+
+``` php
+$api->version(['v1'], function ($api) {
+    $api->get('fm/', 'App\Http\Api\V1\Controllers\FmController@getList');
+});
+```
+
+在 _.env_ 环境配置中，可以配置默认的api版本。
+
+``` php
+API_VERSION=v2
+```
+
+不同版本的访问是通过 header中的 `Accept` 去控制(需要先开启API_STRICT)：需要注意的是`Accept`中需要包含  `Subtype` ，`Standards Tree` , 以及`format`， `version` 信息。在_.env_ 中这样配置：
+
+``` php
+API_DEBUG=false
+API_VERSION=v2
+// 指定api访问域名
+API_DOMAIN=local.lumen.com
+API_DEFAULT_FORMAT=json
+// 是否开启api缓存
+API_CONDITIONAL_REQUEST=false
+// 是否开启严格模式
+API_STRICT=true
+API_STANDARDS_TREE=vnd
+API_SUBTYPE=LtApi
+```
+
+则访问v1版本的api，需要在header中添加：
+
+``` http
+Accept:application/vnd.LtApi.v1+json
+```
 
 
 
